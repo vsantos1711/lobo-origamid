@@ -596,7 +596,9 @@ footer p{
     .titulo-formacao{
         font-size: 40px;
     }
-
+    header{
+        background-color: #e7e7e7;
+    }
 
     .experiencia{
         width: auto;
@@ -659,7 +661,7 @@ footer p{
     }
 }
 
-@media(max-width: 550px){
+@media(max-width: 620px){
     #btn-mobile{
         display: flex;
         padding: .5rem 1rem;
@@ -668,58 +670,84 @@ footer p{
         background: none;
         cursor: pointer;
         gap: 0.5rem;
+        margin-right: 20px;
     }
 
-    #menu ul{
+    ::before {
         display: none;
     }
-    /* #hamburguer{
-        width: 20px;
-        display: block;
-        border-top: 2px solid;
-        gap: 0.5rem;
-    }
 
-    #hamburguer::after, #hamburguer::before{
-        content: "";
+    #menu #navega{
         display: block;
-        width: 20px;
-        height: 2px;
-        background: currentColor;
-        margin-top: 5px;
-    }
-
-    #menu{
-        display: flex;
-        flex-direction: column;
         position: absolute;
         width: 100%;
         top: 70px;
-        right: 0px;
+        right: 0;
+        background-color: #e7e7e7;
+        transition: .6s;
         z-index: 1000;
         height: 0px;
-        transition: .6s;
         visibility: hidden;
-        overflow-y:hidden ;
+        overflow-y: hidden;
     }
-
-    #menu.active {
-        display: flex;
-        flex-direction: column;
-        background-color: #fff;
-        height: 100%;
+    
+    #menu.active #navega{
+        height: calc(100vh - 70px);
         visibility: visible;
         overflow-y: auto;
     }
 
-    #menu a{
+    #navega li{
         padding: 1rem 0;
         margin: 0 1rem;
-        border-bottom: 2px solid rgba(128, 128, 128, .5);
+        border-bottom: 2px solid rgba(0, 0, 0, .05);
+    }
+    #hamburguer{
+        border-top: 2px solid;
+        width: 20px;
+    }
+    #hamburguer::after, #hamburguer::before {
+        content: "";
+        display: block;
+        width: 20px;
+        height: 2px;
+        background: blue;
+        margin-top: 5px;
+        background-color: currentColor;
+        transition: .3s;
+        position: relative;
     }
 
-    #hamburguer.active #hamburguer{
-        background-color: blue;
-    } */
+    #menu.active #hamburguer{
+        border-top-color: transparent;
+        
+    }
+
+    #menu.active #hamburguer::before{
+        transform: rotate(135deg);
+    }
+
+    #menu.active #hamburguer::after{
+        transform: rotate(-135deg);
+        top: -7px
+    }
+
+
+    .texto-introducao h1{
+        font-size: 4rem;
+    }
+}
+
+
+@media(max-width: 530px ){
+    #texto-academia{
+        width: auto ;
+    }
+
+    .lista-cursos{
+        margin-top: 70px;
+        justify-content: center;
+        width: auto;
+    }
 
 }
